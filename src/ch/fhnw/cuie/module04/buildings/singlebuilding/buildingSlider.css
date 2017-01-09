@@ -1,0 +1,13 @@
+.slider .thumb {
+    -fx-border: solid black 1px;
+    -fx-background-color: black;
+
+    -fx-pref-width: 200;
+    -fx-pref-height: 10;
+    -fx-start-margin: 40;
+}
+
+.slider .track {
+    -fx-pref-width: 200;
+    -fx-opacity: 0;
+}
