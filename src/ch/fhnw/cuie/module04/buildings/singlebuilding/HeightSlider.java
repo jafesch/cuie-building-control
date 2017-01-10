@@ -2,24 +2,23 @@ package ch.fhnw.cuie.module04.buildings.singlebuilding;
 
 import ch.fhnw.cuie.module04.buildings.BuildingPM;
 import javafx.beans.binding.Bindings;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.layout.*;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
 import javafx.util.StringConverter;
 
 /**
- * Created by Julian on 09-Jan-17.
+ * Height slider which shows the height in relation to a building.
  */
 public class HeightSlider extends GridPane {
 	private final BuildingPM building;
 
+	StackPane sp;
 	Slider buildingSlider;
 
 	private Label height_mLabel;
@@ -49,31 +48,8 @@ public class HeightSlider extends GridPane {
 		height_mLabel = new Label("Height (m)");
 		height_mField = new TextField();
 
-		System.out.println("Working Directory = " +
-				System.getProperty("user.dir"));
-
-		buildingSlider = new Slider(0, 1000, 100);
-		buildingSlider.setMajorTickUnit(1);
-		buildingSlider.setSnapToTicks(true);
-		buildingSlider.setOrientation(Orientation.VERTICAL);
-		buildingSlider.setPrefWidth(200);
-		buildingSlider.setPrefHeight(800);
-
-		buildingSlider.valueProperty().addListener(new ChangeListener<Number>() {
-			@Override public void changed(ObservableValue<? extends Number> observableValue, Number oldValue, Number newValue) {
-				if (newValue == null) return;
-				Rectangle2D rect = new Rectangle2D(buildingSlider.getLayoutX(), buildingSlider.getLayoutY(), buildingSlider.getWidth(), buildingSlider.getMin());
-			}
-		});
-
+		buildingSlider = new  Slider(0, 1000, 100);
 		buildingSlider.getStylesheets().add(getClass().getResource("buildingSlider.css").toExternalForm());
-
-
-		Image img = new Image("file:burjKhalifa.jpg");
-		buildingSlider.setBackground(new Background(new BackgroundImage(img, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-				new BackgroundSize(200, 800, false, false, false, false))));
-
-
 	}
 
 	private void layoutParts() {
@@ -104,8 +80,6 @@ public class HeightSlider extends GridPane {
 		};
 
 		Bindings.bindBidirectional(height_mField.textProperty(), building.height_mProperty(), doubleStringConverter);
-
 		Bindings.bindBidirectional(building.height_mProperty(), buildingSlider.valueProperty());
 	}
-
 }
