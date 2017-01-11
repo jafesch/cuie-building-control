@@ -1,11 +1,10 @@
-package ch.fhnw.cuie.module04.buildings.singlebuilding;
+package ch.fhnw.cuie.buildings.singlebuilding;
 
+import ch.fhnw.cuie.buildings.BuildingPM;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import ch.fhnw.cuie.module04.buildings.BuildingPM;
 
 public class SingleBuildingStarter extends Application {
 

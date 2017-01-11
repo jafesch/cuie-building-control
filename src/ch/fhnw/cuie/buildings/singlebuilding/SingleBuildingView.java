@@ -1,9 +1,8 @@
-package ch.fhnw.cuie.module04.buildings.singlebuilding;
+package ch.fhnw.cuie.buildings.singlebuilding;
 
+import ch.fhnw.cuie.buildings.BuildingPM;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
-
-import ch.fhnw.cuie.module04.buildings.BuildingPM;
 
 /**
  * @author Dieter Holz

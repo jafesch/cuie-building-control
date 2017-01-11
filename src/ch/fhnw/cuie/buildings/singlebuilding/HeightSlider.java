@@ -1,6 +1,6 @@
-package ch.fhnw.cuie.module04.buildings.singlebuilding;
+package ch.fhnw.cuie.buildings.singlebuilding;
 
-import ch.fhnw.cuie.module04.buildings.BuildingPM;
+import ch.fhnw.cuie.buildings.BuildingPM;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

@@ -1,4 +1,4 @@
-package ch.fhnw.cuie.module04.buildings.singlebuilding;
+package ch.fhnw.cuie.buildings.singlebuilding;
 
 import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
@@ -9,7 +9,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.util.StringConverter;
 
-import ch.fhnw.cuie.module04.buildings.BuildingPM;
+import ch.fhnw.cuie.buildings.BuildingPM;
 
 public class StandardFormPane extends GridPane {
 
